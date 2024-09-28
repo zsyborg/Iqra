@@ -195,6 +195,7 @@ a:focus-visible {
 	text-transform: uppercase;
 	font-size: clamp(2rem, 2.5rem, 5rem );
 	font-weight: 800;
+	padding-bottom: 33px;
 }
 
 .frame__subline {
