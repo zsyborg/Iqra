@@ -28,14 +28,14 @@
 					</nav>
 				</div> -->
 				<nav class="frame__tags flex-line type-tiny">
-					<a href="https://tympanus.net/codrops/demos/?tag=scroll">#about us</a>
-					<a href="https://tympanus.net/codrops/demos/?tag=grid">#our works</a>
-					<a href="https://tympanus.net/codrops/demos/?tag=grid">#services</a>
-					<a href="https://tympanus.net/codrops/demos/?tag=grid">#contact</a>
+					<a href="#about">#about us</a>
+					<a href="#">#our works</a>
+					<a href="#">#services</a>
+					<a href="#">#contact</a>
 				</nav>
 				<span class="frame__logo"><i class="fas fa-brain"></i> IQRA TECHNOLOGIES</span>
 			</header>
-			<section class="content content--padded" style="background-image: url('img/wall.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">	
+			<section class="content content--padded" style="background-image: url('img/wall.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;" id="about">	
 				<h4 class="type-tiny content__title" style="color: #ffffff;">Intro</h4>
 				<p class="content__text" style="color: #ffffff;">Iqra Technologies is a dynamic digital agency offering a diverse range of services to help businesses thrive in the digital age. With expertise spanning across Web, Mobile, SAP solutions, Media, Blockchain we cater to clients from multiple industries, delivering tailored, high-quality custom solutions. Whether you're looking to build a cutting-edge website, streamline your operations with SAP, boost your brand's online presence, or create engaging visual content, we transform your vision into reality. </p>
 			</section>
@@ -128,14 +128,16 @@
 			</section>
 			<section class="content content--padded">
 				<h4 style="font-size: clamp(3remm 4rem, 5rem);">This might one of the most simplest contact form you can fill</h4>
-				<form method="POST" action="contact.php">
+				<form method="POST" action="send.php">
 					<input placeholder="Enter Name" name="name" id="name" class="form-control" autocomplete="off"/>
 					<textarea placeholder="Enter Query" name="query" id="query" class="form-control" autocomplete="off" style="width: 100%;
 					background: none;
 					border: none;
 					border-bottom: 2px solid white;
 					height: 200px;"></textarea>
-					<input placeholder="Enter Email or number" name="contact" id="contact" class="form-control" autocomplete="email"/>
+					<input placeholder="Email or number" name="contact" id="contact" class="form-control" autocomplete="email"/>
+					<br/><br/><br/>
+					<button type="submit" href="#" class="button">Send</button>
 				</form>
 			</section>
 			<!-- <section class="content content--full">
@@ -415,6 +417,7 @@
 		</main>
 		<!-- JavaScript dependencies -->
 		<!-- GSAP library -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-JobWAqYk5CSjWuVV3mxgS+MmccJqkrBaDhk8SKS1BW+71dJ9gzascwzW85UwGhxiSyR7Pxhu50k+Nl3+o5I49A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<script src="js/gsap.min.js"></script>
 		<!-- GSAP ScrollTrigger plugin -->
 		<script src="js/ScrollTrigger.min.js"></script>
@@ -428,5 +431,15 @@
 
 		<!-- Scripts for the effect -->
 		<script type="module" src="js/index.js"></script>
+		<script>
+			$(document).on('click', 'a[href^="#"]', function (event) {
+				event.preventDefault();
+
+				$('html, body').animate({
+					scrollTop: $($.attr(this, 'href')).offset().top
+				}, 500);
+			});
+
+		</script>
   </body>
 </html>
