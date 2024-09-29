@@ -27,6 +27,35 @@ const animateFrame = () => {
   }, 0);
 };
 
+
+// Animated the second background image
+const animateAbout = () => {
+  const frame = document.querySelector('.frame'); 
+  const frameTitle = frame.querySelector('.frame__title');
+  
+  gsap.timeline({
+    defaults: {
+      ease: 'none'
+    },
+    scrollTrigger: {
+      trigger: frame,
+      start: 'clamp(top bottom)', 
+      end: 'bottom top',
+      scrub: true
+    }
+  })
+  .to(frame, {
+    yPercent: 35,
+    scale: 0.95,
+    startAt: { filter: 'brightness(100%)' },
+    filter: 'brightness(30%)'
+  })
+  .to(frameTitle, {
+    xPercent: -80
+  }, 0);
+};
+
+
 // Function to animate the first grid
 const animateFirstGrid = () => {
   const grid = document.querySelector('[data-grid-first]');

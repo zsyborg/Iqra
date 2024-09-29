@@ -472,3 +472,53 @@ a:focus-visible {
 		grid-template-columns: repeat(3,auto);
 	}
 }
+
+input{
+	appearance: none;
+}
+
+
+input.form-control{
+	width: 100%;
+	background: none;
+	border: none;
+	border-bottom: 2px solid white;
+	height: 100px;
+	font-size: clamp(2rem, 5rem, 6rem);
+	color: white;
+}
+
+textarea{
+	width: 100%;
+	background: none;
+	border: none;
+	border-bottom: 2px solid white;
+	height: 100px;
+	font-size: clamp(2rem, 5rem, 6rem);
+	color: white;
+}
+
+textarea::placeholder{
+	color: white;
+	font-size: clamp(2rem, 5rem, 6rem);
+	font-family: "bricolage-grotesque-48", sans-serif;
+	text-transform: uppercase;
+}
+
+textarea::-moz-focus-inner{
+	border: none;
+}
+
+input::placeholder{
+	color: white;
+	font-size: clamp(2rem, 5rem, 6rem);
+	font-family: "bricolage-grotesque-48", sans-serif;
+	text-transform: uppercase;
+}
+
+input::-moz-focus-inner{
+	border: none;
+}
+
+
+
